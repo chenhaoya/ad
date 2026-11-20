@@ -1,0 +1,175 @@
+#!name=墨鱼去广告（Shadowrocket）
+#!desc=拦截广告域名和已知广告请求，HTTPS 路径规则需要启用 HTTPS 解密。
+#!author=ddgksf2013
+# 规则来源：本仓库 Adblock.sgmodule
+
+[Rule]
+DOMAIN,adstrategy.biz.weibo.com,REJECT
+DOMAIN-SUFFIX,api.touch-moblie.com,REJECT
+DOMAIN-SUFFIX,iyes.youku.com,REJECT
+DOMAIN-SUFFIX,shenshiads.com,REJECT
+DOMAIN-SUFFIX,yfanads.com,REJECT
+
+# blackmatrix7/ios_rule_script Shadowrocket Advertising (2026-10-28)
+DOMAIN,ad.ixigua.com,REJECT
+
+[URL Rewrite]
+# 抖音广告接口，参考 https://github.com/fmz200/wool_scripts/blob/7bc19e8/QuantumultX/rewrite/rewrite.snippet#L6981
+^https?://[\w-]+\.amemv\.com/aweme/v\d+/ad/ - reject
+^https://api-ad-product\.huxiu\.com/Api/Product/SDK/Advert/Query/queryAdvertListInfo - reject
+^https://api\.gameplus\.qq\.com/community\.OnloadSrv/GetPreloadScreenInfo - reject
+^https://api\.xiachufang\.com/v\d/ad/ - reject
+^https://app\.api\.versa-ai\.com/launch/ads\? - reject
+^https://app\.dewu\.com/api/v1/app/advertisement/ - reject
+^https://app\.peopleapp\.com/Api/\d+/HomeApi/(adv|getAdvertImage) - reject
+^https://cn-app\.narwaltech\.com/(operate/(cactivity/listByResourceIds|appPosition/listSplash)|app-user-device-server/v\d/user-device/getTips) - reject
+^https://mapi\.appvipshop\.com/vips-mobile/rest/iosAdInfo/report - reject
+^https://mbd\.baidu\.com/newspage/api/getmobads\?page\=landingshare - reject
+^https://mxsa\.mxbc\.net/api/v1/adinfo/limitedAds$ - reject
+^https://router-app-api\.jdcloud\.com/v\d/board/routerAppSplash - reject
+^https?://advertise\.bczeducation\.cn/rpc/advertise - reject
+^https?://1jietu\.com/apiv\d/ad - reject
+^https?://3g\.csair\.com/CSMBP/bookProcess/homepopup/queryAdvertisement - reject
+^https?://acs\.m\.goofish\.com/gw/mtop.*splash\.ads - reject
+^https?://acs\.m\.taobao\.com/gw/mtop\.alibaba\.advertisementservice\.getadv/ - reject
+^https?://acs\.m\.taobao\.com/gw/mtop\.alibaba\.aicloud\.splash - reject
+^https?://acs\.m\.taobao\.com/gw/mtop\.etao\.noah\.query.*etao_splash - reject
+^https?://acs\.m\.taobao\.com/gw/mtop\.film\.mtopadvertiseapi\.queryadvertise/ - reject
+^https?://ad\.mcloud\.139\.com/advertapi - reject
+^https?://ad\.mcloud\.139\.com/advertapi/adv-filter/adv-filter/AdInfoFilter/getAdInfos$ - reject
+^https?://adm\.10jqka\.com\.cn/interface/ad/recommend - reject
+^https?://api-one-wscn\.awtmt\.com/apiv\d/advertising/ads - reject
+^https?://api1\.34580\.com/wx/Home/AdvertisementPhotoshootRequest - reject
+^https?://api3\.cls\.cn/v1/boot/ad - reject
+^https?://api4\.bybutter\.com/v\d/app/placements/\d/advertisements - reject
+^https?://api\.00bang\.cn/llb/baseinfo/advertise/getAdvertiseByPageCode - reject
+^https?://api\.21ec74\.com/v2\.5/ad - reject
+^https?://api\.caijingmobile\.com/(ad|advert)/ - reject
+^https?://api\.cloud\.189\.cn/guns/getOpenscreenBanners - reject
+^https?://api\.douban\.com/b.*/common_ads\?.* - reject
+^https?://api\.douban\.com/v2/app_ads/splash - reject
+^https?://api\.futunn\.com/(v\d/)?ad/ - reject
+^https?://api\.gaoqingdianshi\.com/api/v\d/ad/ - reject
+^https?://api\.gotokeep\.com/ads/v\d/ads/preload - reject
+^https?://api\.gotokeep\.com/op-engine-webapp/v\d/ad - reject
+^https?://api\.internetofcity\.cn/api/resource/anon/popups/(getSplashList|getList) - reject
+^https?://api\.ireader\.mobi/activity/ad/openScreen - reject
+^https?://api\.izuiyou\.com/ad/ - reject
+^https?://api\.jxedt\.com/ad/ - reject
+^https?://api\.kmovie\.gifshow\.com/rest/n/kmovie/app/(resource|banner) - reject
+^https?://api\.livelab\.com\.cn/pgc/advert - reject
+^https?://api\.m\.jd\.com/client\.action\?functionId=(start|queryMaterialAdverts) - reject
+^https?://api\.mcd\.cn/bff/portal/(richpop|home/splash) - reject
+^https?://api\.medlive\.cn/promotion-api/adlist - reject
+^https?://api\.merach\.com/app/AppAdvertisingController/getAdvert - reject
+^https?://api\.qbb6\.com/ad/ - reject
+^https?://api\.qd-metro\.com/ngstatic/appScreenAds - reject
+^https?://api\.taou\.com/sdk/global/splash_ad - reject
+^https?://api\.tipsoon\.com/api/v\d/top/ad - reject
+^https?://api\.touker\.com/v2/IAdvertisementAPI\.queryStartAdvertisement - reject
+^https?://api\.vistopia\.com\.cn/api/v\d/home/advertisement - reject
+^https?://api\.weibo\.cn/\d/ad/preload - reject
+^https?://api\.xiaoheihe\.cn/.*get_ads_info - reject
+^https?://api\.yonghuivip\.com/web/shensuan/ad/getAd - reject
+^https?://api\.ys7\.com/api/ads - reject
+^https?://app-api\.medsci\.cn/app-advertisement-space/showAdList - reject
+^https?://app-gateway\.leisuapi\.com/v\d/app/mobile/(banners|ads) - reject
+^https?://app-gw\.csdn\.net/silkroad-api/api/v\d/assemble/list/pub/channel/app_open_screen_ad - reject
+^https?://app3\.qdaily\.com/app\d/boot_advertisements\.json - reject
+^https?://app\.58\.com/api/home/(advertising|appadv) - reject
+# Biliverse ADBlock v0.7.5 开屏接口
+^https?://app\.bili(bili\.com|api\.net)/x/v2/splash/(show|list|brand/list|event/list2)([/?]|$) - reject
+# Adblock/AmapAds.sgmodule 开屏广告
+^https?://(m5|m5-zb|center|amap-aos-info-nogw)\.amap\.com/ws/(aos|valueadded)/alimama/splash_screen([/?]|$) - reject
+^https?://app\.ibuscloud\.com/v\d/(app/getSkipAdvert|notice/getNoticeWithAdvByCity) - reject
+^https?://app\.yinxiang\.com/ads/ - reject
+^https?://appconf\.mail\.163\.com/mmad/get\.do - reject
+^https?://appconf\.mail\.163\.com/mmad/master/get\.do - reject
+^https?://bbs-api\.miyoushe\.com/apihub/api/getAppSplash - reject
+^https?://beijing-gateway-customer\.app-prod\.bjev\.com\.cn/.*/openScreenAdvert - reject
+^https?://bp-api\.bestv\.com\.cn/cms/api/free/open/advertisingV2 - reject
+^https?://business\.msstatic\.com/advertiser/material - reject
+^https?://careapi\.oclean\.com/mall/v\d/Temporary/SafetyGetStartAdvert - reject
+^https?://cdn\.dianshihome\.com/static/ad/ - reject
+^https?://cdns\.chinastock\.com\.cn/cdn/omc/app/app/(index_pop_banner|startup_banner) - reject
+^https?://client\.qunar\.com/pitcher-proxy\?qrt=p_splashAd - reject
+^https?://client\.tujia\.com/bnbapp-node/app/portal/getStartPictureAdvertising - reject
+^https?://cn-acs\.m\.cainiao\.com/gw/mtop\.cainiao\.guoguo\.nbnetflow\.ads\.(show|mshow)\.cn/ - reject
+^https?://comicapi\.manhuashe\.com/v\d/(ads/adstrategys|public/startupactivity) - reject
+^https?://compus\.xiaofubao\.com/compus/advertising - reject
+^https?://creditcardapp\.bankcomm\.cn/mappweb_interface/common/(qryPopAds|qryLaunchAds)\.do - reject
+^https?://creditcardapp\.bankcomm\.com/mapp/common/(queryGuidePageAds|getPopAds)\.do$ - reject
+^https?://creditcardapp\.bankcomm\.com/mappweb.*(Advert|Ads).do - reject
+^https?://data\.hgold\.cn/ky/.*/ad\.php - reject
+^https?://dili\.bdatu\.com/jiekou/ad - reject
+^https?://dj\.palmestore\.com/zybk/api/ad - reject
+^https?://dq\.dxy\.cn/api\.php\?action=getpostbanners - reject
+^https?://easyreadfs\.nosdn\.127\.net/ad-material/ - reject
+^https?://explorer\.tratao\.com/api/client/v4/xtransfer/ad/ - reject
+^https?://file\.mylyg\.net/banner/(fc[a-f0-9]{30})\.jpg - reject
+^https?://ftapi\.10jqka\.com\.cn/futgwapi/api/om/v\d/ad/common/transfer - reject
+^https?://galaxy-app\.geely\.com/app/v\d/advertising - reject
+^https?://gateway\.36kr\.com/api/adx/ad/show - reject
+^https?://goblin\.hupu\.com/.+/interfaceAd/getOther - reject
+^https?://god\.gameyw\.netease\.com/v\d/ad/serving/app-start - reject
+^https?://guide-acs\.m\.taobao\.com/gw/mtop\.taobao\.wireless\.home\.splash\.awesome\.get - reject
+^https?://hfapp-service\.qweather\.net/.*/ad/ - reject
+^https?://i\.ys7\.com/api/ads/ - reject
+^https?://igetcool-gateway\.igetcool\.com/app-api-other-server/white/open/ads.json - reject
+^https?://ih2\.ireader\.com/zyapi/bookstore/ad - reject
+^https?://ih2\.ireader\.com/zyapi/self/screen/ad - reject
+^https?://ih2\.ireader\.com/zycl/api/ad - reject
+^https?://img\.jiemian\.com/ads/ - reject
+^https?://info\.mina\.mi\.com/advertise/splash - reject
+^https?://j1\.pupuapi\.com/client/marketing/advertisement - reject
+^https?://jad-api\.jin10\.com/ad - reject
+^https?://jdread-api\.jd\.com/jdread/api/channel/module/opens - reject
+^https?://jdread-api\.jd\.com/jdread/api/popup - reject
+^https?://jz\.wacaijizhang\.com/api/banners/newSplash - reject
+^https?://kad\.gotokeep\.com/op-engine-webapp/v\d/ad - reject
+^https?://lens\.leoao\.com/lens/.+(getUserScheme|queryAppBanners|Advert|popup) - reject
+^https?://list-app-m\.i4\.cn/getopfstadinfo\.xhtml - reject
+^https?://m\.ctrip\.com/restapi/soa2/\d+/scjson/tripAds - reject
+^https?://m\.tuniu\.com/api/operation/splash/ - reject
+^https?://maicai\.api\.ddxq\.mobi/advert/startUpScreen - reject
+^https?://mapi\.appvipshop\.com/vips-mobile/rest/activity/advertisement/get - reject
+^https?://marketing-aibox\.v\.mitvos\.com/advertise/splash - reject
+^https?://mime\.baidu\.com/v\d/activity/advertisement - reject
+^https?://mob\.mddcloud\.com\.cn/adApi/advert - reject
+^https?://mobads\.baidu\.com/cpro/ui/mads.php - reject
+^https?://mobile-consumer\.jetour\.com\.cn/web/position/details\?pageCode=Splashscreens - reject
+^https?://mobile\.iqihang\.com/api/ark/web/v\d/advert - reject
+^https?://mpos-pic\.helipay\.com/upload/images/advertisment - reject
+^https?://mystore-gw\.watsonsvip\.com\.cn/gfu/popup/advert/launch - reject
+^https?://oneapp-api\.faw-vw\.com/content/.*Code=VWAPP_ICE_OPEN_SCREEN_ADS - reject
+^https?://open\.78dm\.net/v\d/site/ad/ - reject
+^https?://pan\.baidu\.com/rest/.*/pcs/ad - reject
+^https?://pan\.baidu\.com/rest/2\.0/pcs/ad - reject
+^https?://patientgate\.91160\.com/advert-api/v\d/advert - reject
+^https?://pipi\.4kya\.com//xgapp\.php/v3/advert\.position=[^2]+ - reject
+^https?://qadx\.qinlinad\.com/ad/ - reject
+^https?://r\.inews\.qq\.com/(getBannerAds|getSplash)([/?]|$) - reject
+^https?://res\.pizzahut\.com\.cn/CRM/phad/apphome/apphome - reject
+^https?://restapi\.iyunmai\.com/ad-api/ - reject
+^https?://saad\.ms\.zhangyue\.net/ad/ - reject
+^https?://sdk\.alibaba\.com\.ailbaba\.me/.*?/v\d/(version|top_notice\?|advert\?position=[^2]+) - reject
+^https?://sdk\.tianmu\.mobi/ad - reject
+^https?://shop-api\.retail\.mi\.com/mtop/navi/skywheel/mishop/splash - reject
+^https?://slapi\.oray\.net/client/ad - reject
+^https?://superapp\.xgimi\.com/api/v1/app/ad/configs\?_sort=createdAt:Adesc - reject
+^https?://switch\.jumpvg\.com/jump/(getlaunchad|recommend/ad_conf) - reject
+^https?://t\.wind\.com\.cn/smartad/ad - reject
+^https?://td\.cgmcare\.cn/api/ad - reject
+^https?://tiebac\.baidu\.com/c/f/ad/getFeedAd - reject
+^https?://tk\.lanjiyin\.com\.cn/ad/getAdList - reject
+^https?://wap\.ngchina\.cn/news/adverts - reject
+^https?://wcprd\.hilton\.com\.cn/app-middleware/graphql\?type=splashAd - reject
+^https?://www\.ctm\.net/crm_api/.*advertise - reject
+^https?://www\.pansearch\.me/api/adsite - reject
+^https?://xapi\.xinmanhua\.net/splashgroups\?include=splashs - reject
+^https?://yyfapi\.huatu\.com/common/ad/ - reject
+^https?://zjdr666\.com/zjdr\.php/v\d/(version|top_notice\?|advert\?position=[^2]+) - reject
+^https?://helper\.2bulu\.com/(greenPea/queryTasks|proSpecial/allData|saveSplashFrequencyStatistics|getPopInfo|getAppEntranceConfig|promote/list|getSplash|outing/reqFoundNewList|outing/reqIndex) - reject
+
+[MITM]
+hostname = %APPEND% *.amemv.com, 1jietu.com, 3g.csair.com, acs.m.goofish.com, acs.m.taobao.com, ad.mcloud.139.com, adm.10jqka.com.cn, advertise.bczeducation.cn, amap-aos-info-nogw.amap.com, api-ad-product.huxiu.com, api-one-wscn.awtmt.com, api.00bang.cn, api.21ec74.com, api.caijingmobile.com, api.cloud.189.cn, api.douban.com, api.futunn.com, api.gameplus.qq.com, api.gaoqingdianshi.com, api.gotokeep.com, api.internetofcity.cn, api.ireader.mobi, api.izuiyou.com, api.jxedt.com, api.kmovie.gifshow.com, api.livelab.com.cn, api.m.jd.com, api.mcd.cn, api.medlive.cn, api.merach.com, api.qbb6.com, api.qd-metro.com, api.taou.com, api.tipsoon.com, api.touker.com, api.vistopia.com.cn, api.weibo.cn, api.xiachufang.com, api.xiaoheihe.cn, api.yonghuivip.com, api.ys7.com, api1.34580.com, api3.cls.cn, api4.bybutter.com, app-api.medsci.cn, app-gateway.leisuapi.com, app-gw.csdn.net, app.58.com, app.api.versa-ai.com, app.biliapi.net, app.bilibili.com, app.dewu.com, app.ibuscloud.com, app.peopleapp.com, app.yinxiang.com, app3.qdaily.com, appconf.mail.163.com, bbs-api.miyoushe.com, beijing-gateway-customer.app-prod.bjev.com.cn, bp-api.bestv.com.cn, business.msstatic.com, careapi.oclean.com, cdn.dianshihome.com, cdns.chinastock.com.cn, center.amap.com, client.qunar.com, client.tujia.com, cn-acs.m.cainiao.com, cn-app.narwaltech.com, comicapi.manhuashe.com, compus.xiaofubao.com, creditcardapp.bankcomm.cn, creditcardapp.bankcomm.com, data.hgold.cn, dili.bdatu.com, dj.palmestore.com, dq.dxy.cn, easyreadfs.nosdn.127.net, explorer.tratao.com, file.mylyg.net, ftapi.10jqka.com.cn, galaxy-app.geely.com, gateway.36kr.com, goblin.hupu.com, god.gameyw.netease.com, guide-acs.m.taobao.com, helper.2bulu.com, hfapp-service.qweather.net, i.ys7.com, igetcool-gateway.igetcool.com, ih2.ireader.com, img.jiemian.com, info.mina.mi.com, j1.pupuapi.com, jad-api.jin10.com, jdread-api.jd.com, jz.wacaijizhang.com, kad.gotokeep.com, lens.leoao.com, list-app-m.i4.cn, m.ctrip.com, m.tuniu.com, m5-zb.amap.com, m5.amap.com, maicai.api.ddxq.mobi, mapi.appvipshop.com, marketing-aibox.v.mitvos.com, mbd.baidu.com, mime.baidu.com, mob.mddcloud.com.cn, mobads.baidu.com, mobile-consumer.jetour.com.cn, mobile.iqihang.com, mpos-pic.helipay.com, mxsa.mxbc.net, mystore-gw.watsonsvip.com.cn, oneapp-api.faw-vw.com, open.78dm.net, pan.baidu.com, patientgate.91160.com, pipi.4kya.com, qadx.qinlinad.com, r.inews.qq.com, res.pizzahut.com.cn, restapi.iyunmai.com, router-app-api.jdcloud.com, saad.ms.zhangyue.net, sdk.alibaba.com.ailbaba.me, sdk.tianmu.mobi, shop-api.retail.mi.com, slapi.oray.net, superapp.xgimi.com, switch.jumpvg.com, t.wind.com.cn, td.cgmcare.cn, tiebac.baidu.com, tk.lanjiyin.com.cn, wap.ngchina.cn, wcprd.hilton.com.cn, www.ctm.net, www.pansearch.me, xapi.xinmanhua.net, yyfapi.huatu.com, zjdr666.com
